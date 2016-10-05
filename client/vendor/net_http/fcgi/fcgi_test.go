@@ -9,7 +9,7 @@ import (
 	"errors"
 	"io"
 	"io/ioutil"
-	"net/http"
+	"net_http"
 	"testing"
 )
 

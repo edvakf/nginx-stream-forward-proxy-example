@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	"net/http/internal"
+	"net_http/internal"
 	"net/textproto"
 	"sort"
 	"strconv"

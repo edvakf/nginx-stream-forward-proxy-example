@@ -18,7 +18,7 @@ import (
 	"io/ioutil"
 	"mime"
 	"mime/multipart"
-	"net/http/httptrace"
+	"net_http/httptrace"
 	"net/textproto"
 	"net/url"
 	"strconv"
@@ -671,7 +671,7 @@ func NewRequest(method, urlStr string, body io.Reader) (*Request, error) {
 		method = "GET"
 	}
 	if !validMethod(method) {
-		return nil, fmt.Errorf("net/http: invalid method %q", method)
+		return nil, fmt.Errorf("net_http: invalid method %q", method)
 	}
 	u, err := url.Parse(urlStr)
 	if err != nil {

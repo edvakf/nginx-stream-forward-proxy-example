@@ -6,7 +6,7 @@ package http_test
 
 import (
 	"fmt"
-	"net/http"
+	"net_http"
 	"os"
 	"runtime"
 	"sort"
@@ -40,7 +40,7 @@ func interestingGoroutines() (gs []string) {
 			// These only show up with GOTRACEBACK=2; Issue 5005 (comment 28)
 			strings.Contains(stack, "runtime.goexit") ||
 			strings.Contains(stack, "created by runtime.gc") ||
-			strings.Contains(stack, "net/http_test.interestingGoroutines") ||
+			strings.Contains(stack, "net_http_test.interestingGoroutines") ||
 			strings.Contains(stack, "runtime.MHeap_Scavenger") {
 			continue
 		}

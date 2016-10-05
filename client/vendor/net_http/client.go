@@ -424,7 +424,7 @@ func alwaysFalse() bool { return false }
 // control how redirects are processed. If returned, the next request
 // is not sent and the most recent response is returned with its body
 // unclosed.
-var ErrUseLastResponse = errors.New("net/http: use last response")
+var ErrUseLastResponse = errors.New("net_http: use last response")
 
 // checkRedirect calls either the user's configured CheckRedirect
 // function, or the default.

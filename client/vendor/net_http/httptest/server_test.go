@@ -8,7 +8,7 @@ import (
 	"bufio"
 	"io/ioutil"
 	"net"
-	"net/http"
+	"net_http"
 	"testing"
 )
 

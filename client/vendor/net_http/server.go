@@ -1614,7 +1614,7 @@ func (w *response) sendExpectationFailed() {
 // and a Hijacker.
 func (w *response) Hijack() (rwc net.Conn, buf *bufio.ReadWriter, err error) {
 	if w.handlerDone.isSet() {
-		panic("net/http: Hijack called after ServeHTTP finished")
+		panic("net_http: Hijack called after ServeHTTP finished")
 	}
 	if w.wroteHeader {
 		w.cw.flush()
@@ -1640,7 +1640,7 @@ func (w *response) Hijack() (rwc net.Conn, buf *bufio.ReadWriter, err error) {
 
 func (w *response) CloseNotify() <-chan bool {
 	if w.handlerDone.isSet() {
-		panic("net/http: CloseNotify called after ServeHTTP finished")
+		panic("net_http: CloseNotify called after ServeHTTP finished")
 	}
 	c := w.conn
 	c.mu.Lock()
@@ -2331,7 +2331,7 @@ func (s *Server) logf(format string, args ...interface{}) {
 //
 //	import (
 //		"io"
-//		"net/http"
+//		"net_http"
 //		"log"
 //	)
 //
@@ -2361,7 +2361,7 @@ func ListenAndServe(addr string, handler Handler) error {
 //
 //	import (
 //		"log"
-//		"net/http"
+//		"net_http"
 //	)
 //
 //	func handler(w http.ResponseWriter, req *http.Request) {

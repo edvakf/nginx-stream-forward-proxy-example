@@ -8,8 +8,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"net/http"
-	"net/http/httptest"
+	"net_http"
+	"net_http/httptest"
 )
 
 func ExampleResponseRecorder() {

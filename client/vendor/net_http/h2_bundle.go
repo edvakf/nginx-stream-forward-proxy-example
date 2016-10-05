@@ -30,7 +30,7 @@ import (
 	"log"
 	"math"
 	"net"
-	"net/http/httptrace"
+	"net_http/httptrace"
 	"net/textproto"
 	"net/url"
 	"os"
@@ -5404,7 +5404,7 @@ func (cc *http2ClientConn) putFrameScratchBuffer(buf []byte) {
 
 // errRequestCanceled is a copy of net/http's errRequestCanceled because it's not
 // exported. At least they'll be DeepEqual for h1-vs-h2 comparisons tests.
-var http2errRequestCanceled = errors.New("net/http: request canceled")
+var http2errRequestCanceled = errors.New("net_http: request canceled")
 
 func http2commaSeparatedTrailers(req *Request) (string, error) {
 	keys := make([]string, 0, len(req.Trailer))
@@ -6256,7 +6256,7 @@ func (b http2transportResponseBody) Read(p []byte) (n int, err error) {
 		if int64(n) > cs.bytesRemain {
 			n = int(cs.bytesRemain)
 			if err == nil {
-				err = errors.New("net/http: server replied with more than declared Content-Length; truncated")
+				err = errors.New("net_http: server replied with more than declared Content-Length; truncated")
 				cc.writeStreamReset(cs.ID, http2ErrCodeProtocol, err)
 			}
 			cs.readErr = err

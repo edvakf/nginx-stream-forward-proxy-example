@@ -8,9 +8,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"net/http"
-	"net/http/httptest"
-	"net/http/httputil"
+	"net_http"
+	"net_http/httptest"
+	"net_http/httputil"
 	"net/url"
 	"strings"
 )

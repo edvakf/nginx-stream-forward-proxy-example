@@ -8,7 +8,7 @@ import (
 	"crypto/tls"
 	"io"
 	"io/ioutil"
-	"net/http"
+	"net_http"
 	"net/url"
 	"reflect"
 	"strings"

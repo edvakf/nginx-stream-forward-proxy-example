@@ -10,7 +10,7 @@ import (
 	"io"
 	"log"
 	"net"
-	"net/http"
+	"net_http"
 	"net/url"
 	"strings"
 	"sync"

@@ -13,7 +13,7 @@ import (
 	"go/ast"
 	"io"
 	"io/ioutil"
-	"net/http/internal"
+	"net_http/internal"
 	"net/url"
 	"reflect"
 	"regexp"

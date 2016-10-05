@@ -24,11 +24,11 @@ import (
 	"io/ioutil"
 	"log"
 	"net"
-	. "net/http"
-	"net/http/httptest"
-	"net/http/httptrace"
-	"net/http/httputil"
-	"net/http/internal"
+	. "net_http"
+	"net_http/httptest"
+	"net_http/httptrace"
+	"net_http/httputil"
+	"net_http/internal"
 	"net/url"
 	"os"
 	"reflect"
@@ -2116,7 +2116,7 @@ var proxyFromEnvTests = []proxyFromEnvTest{
 	// where HTTP_PROXY can be attacker-controlled.
 	{env: "http://10.1.2.3:8080", reqmeth: "POST",
 		want:    "<nil>",
-		wanterr: errors.New("net/http: refusing to use HTTP_PROXY value in CGI environment; see golang.org/s/cgihttpproxy")},
+		wanterr: errors.New("net_http: refusing to use HTTP_PROXY value in CGI environment; see golang.org/s/cgihttpproxy")},
 
 	{want: "<nil>"},
 

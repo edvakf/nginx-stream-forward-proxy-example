@@ -11,8 +11,8 @@ import (
 	"fmt"
 	"io"
 	"io/ioutil"
-	. "net/http"
-	"net/http/httptest"
+	. "net_http"
+	"net_http/httptest"
 	"strings"
 	"testing"
 )

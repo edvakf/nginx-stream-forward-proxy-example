@@ -12,7 +12,7 @@ import (
 	"io"
 	"io/ioutil"
 	"net"
-	"net/http"
+	"net_http"
 	"net/url"
 	"strings"
 	"time"

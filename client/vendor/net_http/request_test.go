@@ -12,7 +12,7 @@ import (
 	"io"
 	"io/ioutil"
 	"mime/multipart"
-	. "net/http"
+	. "net_http"
 	"net/url"
 	"os"
 	"reflect"
