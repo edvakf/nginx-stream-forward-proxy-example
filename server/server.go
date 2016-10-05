@@ -12,5 +12,5 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/", handler) // ハンドラを登録してウェブページを表示させる
-	http.ListenAndServe(":18080", nil)
+	http.ListenAndServe("0.0.0.0:80", nil)
 }

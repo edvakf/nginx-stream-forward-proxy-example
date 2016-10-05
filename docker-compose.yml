@@ -17,6 +17,6 @@ services:
     build:
       context: ./client
     links:
-      - server
+      #- server
       - proxy1
       - proxy2

@@ -21,7 +21,7 @@ func req(server string) {
 			//DialTLS: localDialTLS, //replace DialTLS
 		},
 	}
-	resp, err := client.Get("http://username.example.com/hello")
+	resp, err := client.Get("http://server/")
 	if err != nil {
 		fmt.Println(err.Error())
 	}
