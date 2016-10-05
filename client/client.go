@@ -31,14 +31,14 @@ func req(server string) {
 		fmt.Println(err.Error())
 	}
 	fmt.Println(string(body))
-	time.Sleep(1 * time.Second)
 }
 
 func main() {
 	//var servers = []string{"server:18080", "proxy1:18080", "proxy2:18080"}
 	var servers = []string{"proxy1:18080", "proxy2:18080"}
 	//var servers = []string{"server:18080"}
-	for i := 0; i < 100; i++ {
+	for i := 0; i < 60; i++ {
 		req(servers[i%len(servers)])
+		time.Sleep(1 * time.Second)
 	}
 }
