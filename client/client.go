@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/tls"
 	"fmt"
 	"io/ioutil"
 	"net"
@@ -15,13 +16,15 @@ func req(server string) {
 			KeepAlive: 30 * time.Second,
 		}).Dial(network, server)
 	}
+
 	client := &http.Client{
 		Transport: &http.Transport{
 			Dial: localDial, //replace Dial
 			//DialTLS: localDialTLS, //replace DialTLS
+			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 		},
 	}
-	resp, err := client.Get("http://server/")
+	resp, err := client.Get("https://server:443/")
 	if err != nil {
 		fmt.Println(err.Error())
 	}
@@ -36,7 +39,7 @@ func req(server string) {
 func main() {
 	//var servers = []string{"server:18080", "proxy1:18080", "proxy2:18080"}
 	var servers = []string{"proxy1:18080", "proxy2:18080"}
-	//var servers = []string{"server:18080"}
+	//var servers = []string{"server:443"}
 	for i := 0; i < 60; i++ {
 		req(servers[i%len(servers)])
 		time.Sleep(1 * time.Second)

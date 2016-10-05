@@ -2,15 +2,23 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
+	"path/filepath"
 )
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Printf("connected from %s\n", r.RemoteAddr)
-	fmt.Fprintf(w, "connected from %s", r.RemoteAddr)
-}
-
 func main() {
-	http.HandleFunc("/", handler) // ハンドラを登録してウェブページを表示させる
-	http.ListenAndServe("0.0.0.0:80", nil)
+	certFile, _ := filepath.Abs("oreore.crt")
+	keyFile, _ := filepath.Abs("oreore.key")
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Printf("connected from %s (protocol %s)\n", r.RemoteAddr, r.Proto)
+		fmt.Fprintf(w, "connected from %s (protocol %s)\n", r.RemoteAddr, r.Proto)
+	})
+
+	err := http.ListenAndServeTLS(":443", certFile, keyFile, nil)
+
+	if err != nil {
+		log.Printf("[ERROR] %s", err)
+	}
 }
