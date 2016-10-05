@@ -1,8 +1,8 @@
 FROM golang:alpine
 
-WORKDIR /go/src/github.com/edvakf/https-forward-proxy/client
-COPY ./ /go/src/github.com/edvakf/https-forward-proxy/client
+WORKDIR /go/src/github.com/edvakf/nginx-stream-forward-proxy-example/client
+COPY ./ /go/src/github.com/edvakf/nginx-stream-forward-proxy-example/client
 
 RUN go build -o app .
 
-CMD ["/go/src/github.com/edvakf/https-forward-proxy/client/app"]
+CMD ["/go/src/github.com/edvakf/nginx-stream-forward-proxy-example/client/app"]
