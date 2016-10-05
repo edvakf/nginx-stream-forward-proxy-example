@@ -1,0 +1,22 @@
+version: '2'
+services:
+  server:
+    build:
+      context: ./server
+  proxy1:
+    build:
+      context: ./proxy
+    links:
+      - server
+  proxy2:
+    build:
+      context: ./proxy
+    links:
+      - server
+  client:
+    build:
+      context: ./client
+    links:
+      - server
+      - proxy1
+      - proxy2
