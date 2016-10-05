@@ -18,7 +18,7 @@ import (
 	"io/ioutil"
 	"mime"
 	"mime/multipart"
-	"net_http/httptrace"
+	"net/http/httptrace"
 	"net/textproto"
 	"net/url"
 	"strconv"

@@ -20,7 +20,7 @@ import (
 	"io"
 	"log"
 	"net"
-	"net_http/httptrace"
+	"net/http/httptrace"
 	"net/url"
 	"os"
 	"strings"

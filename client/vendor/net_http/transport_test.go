@@ -26,7 +26,7 @@ import (
 	"net"
 	. "net_http"
 	"net_http/httptest"
-	"net_http/httptrace"
+	"net/http/httptrace"
 	"net_http/httputil"
 	"net_http/internal"
 	"net/url"

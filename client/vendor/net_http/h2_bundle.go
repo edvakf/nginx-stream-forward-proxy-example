@@ -30,7 +30,7 @@ import (
 	"log"
 	"math"
 	"net"
-	"net_http/httptrace"
+	"net/http/httptrace"
 	"net/textproto"
 	"net/url"
 	"os"
