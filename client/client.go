@@ -17,12 +17,14 @@ func req(server string) {
 		}).Dial(network, server)
 	}
 
+	tr := &http.Transport{
+		Dial: localDial, //replace Dial
+		//DialTLS: localDialTLS, //replace DialTLS
+		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
+	}
+
 	client := &http.Client{
-		Transport: &http.Transport{
-			Dial: localDial, //replace Dial
-			//DialTLS: localDialTLS, //replace DialTLS
-			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
-		},
+		Transport: tr,
 	}
 	resp, err := client.Get("https://server:443/")
 	if err != nil {
@@ -34,6 +36,8 @@ func req(server string) {
 		fmt.Println(err.Error())
 	}
 	fmt.Println(string(body))
+
+	tr.CloseIdleConnections()
 }
 
 func main() {
