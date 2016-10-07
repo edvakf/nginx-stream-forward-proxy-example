@@ -4,29 +4,19 @@ import (
 	"crypto/tls"
 	"fmt"
 	"io/ioutil"
-	"net"
 	"net_http"
 	"time"
 )
 
 func req(server string) {
-	var localDial = func(network, addr string) (net.Conn, error) {
-		return (&net.Dialer{
-			Timeout:   30 * time.Second,
-			KeepAlive: 30 * time.Second,
-		}).Dial(network, server)
-	}
-
 	tr := &http.Transport{
-		Dial: localDial, //replace Dial
-		//DialTLS: localDialTLS, //replace DialTLS
 		TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
 	}
 
 	client := &http.Client{
 		Transport: tr,
 	}
-	resp, err := client.Get("https://server:443/")
+	resp, err := client.Get("https://" + server + "/")
 	if err != nil {
 		fmt.Println(err.Error())
 	}
